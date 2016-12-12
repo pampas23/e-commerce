@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Use bootstrap for css style
+gem 'bootstrap-sass', '~> 3.3.6'
 
 #User devise for user log in
 gem 'devise'
