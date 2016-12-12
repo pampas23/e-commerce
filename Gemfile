@@ -35,6 +35,15 @@ gem 'bootstrap-sass', '~> 3.3.6'
 #User devise for user log in
 gem 'devise'
 
+
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'faker'
+gem 'acts_as_list'
+gem 'font-awesome-rails'
+gem 'ransack'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
