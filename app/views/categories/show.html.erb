@@ -1,4 +1,4 @@
-<h1>Home page</h1>
+<h1><%= @category.name %></h1>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -11,6 +11,7 @@
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
   	<ul class="nav nav-tabs">
+  	<li class="nav-item"><%= link_to "Home", root_path %></li>
   	<% @categories.each do |category| %>
   	  <li class="nav-item">
   	    <%= link_to category.name, category_path(category) %>

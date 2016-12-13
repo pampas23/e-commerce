@@ -9,7 +9,7 @@
 categories = %w(Commerce Art Computer Food)
 
 categories.each do |category_name|
-	category = Category.create(name: category_name, discription: Faker::Lorem.sentences(rand(3..5)).join)
+	category = Category.create(name: category_name, enable: true ,discription: Faker::Lorem.sentences(rand(3..5)).join)
 	rand(3..5).times do
 		category.products.create(
 			name: Faker::Commerce.product_name,

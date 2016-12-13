@@ -1,0 +1,21 @@
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+  	<ul class="nav nav-tabs">
+  	<li class="nav-item"><%= link_to "Home", root_path %></li>
+  	<% @categories.each do |category| %>
+  	  <li class="nav-item">
+  	    <%= link_to category.name, category_path(category) %>
+  	  </li>
+  	<% end %>
+  	</ul>
+  </div>
+</nav>
+<div class="col-sm-1"></div>
+
+<div class="col-sm-10">	
+	<div class='media'>
+		<div><%= image_tag Faker::Placeholdit.image("640x480", "png", 'ccc'), class: 'pull-left' %>	</div>
+		<div class="media-body">
+			<%= @product.name %>
+		</div>	
+	</div>
+</div>

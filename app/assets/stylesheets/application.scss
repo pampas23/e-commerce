@@ -1,2 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.product {
+  margin-bottom: 20px;
+  position: inline;
+
+  .product-name {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+
+  .product-description {
+    min-height: 8em;
+  }
+}
