@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root :to => "home#index"
 
   resources :categories, :only => :show do 
-  	resources :products
+  	resources :products , :only => :show do
+  		post 'add', on: :member
+  	end
   end
+  
+  resource :cart, :only => :show 
 end
