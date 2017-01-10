@@ -9,16 +9,17 @@
 categories = %w(Commerce Art Computer Food)
 
 categories.each do |category_name|
-	category = Category.create(name: category_name, enable: true ,discription: Faker::Lorem.sentences(rand(3..5)).join)
+	category = Category.create(name: category_name, enable: true ,discription: Faker::Lorem.sentences(rand(7..10)).join)
 	rand(3..5).times do
 		category.products.create(
 			name: Faker::Commerce.product_name,
-			discription: Faker::Lorem.sentences(rand(3..5)).join,
-			content: Faker::Lorem.sentences(rand(3..5)).join,
+			discription: Faker::Lorem.sentences(rand(7..10)).join,
+			content: Faker::Lorem.sentences(rand(7..10)).join,
 			price: Faker::Commerce.price,
 			active: true,
 			on_sale: false
 			)
 		puts "create product in #{category_name}"
 	end
+
 end
