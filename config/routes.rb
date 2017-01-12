@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   		post 'add', on: :member
   	end
   end
-  
+
   resource :cart, :only => [:show, :destroy]
+  resources :orders, only: [:index, :new, :create, :show]
 end
