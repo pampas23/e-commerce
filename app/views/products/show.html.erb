@@ -1,13 +1,33 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">選單切換</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-  	<ul class="nav nav-tabs">
-  	<li class="nav-item"><%= link_to "Home", root_path %></li>
-  	<% @categories.each do |category| %>
-  	  <li class="nav-item">
-  	    <%= link_to category.name, category_path(category) %>
-  	  </li>
-  	<% end %>
-    <li class="nav-item"><%= link_to "購物車", cart_path%></li>
-  	</ul>
+    <ul class="nav nav-tabs">
+    <li class="nav nav-item"><%=link_to "Home", root_path%></li>
+    <% @categories.each do |category| %>
+      <li class="nav-item">
+        <%= link_to category.name, category_path(category) %>
+      </li>
+    <% end %>
+      <% if current_user %>
+        <li class="nav-item"><%= link_to "購物車", cart_path%></li>
+        <li class="nav-item">
+          <%= link_to "登出", destroy_user_session_path , method: :delete%>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "登入", new_user_session_path%>
+        </li>
+      <% end %>
+
+    </ul>
   </div>
 </nav>
 
@@ -16,7 +36,8 @@
 	<div class='media'>
 		<div><%= image_tag Faker::Placeholdit.image("640x480", "png", 'ccc'), class: 'pull-left' %></div>
 		<div class="media-body">
-			<%= @product.name %>
+			<h2><%= @product.name %></h2> 
+      <%= @product.discription %>
 		</div>
     <div><%= link_to "加到購物車", add_category_product_path(@category,@product),:method => :post,:class =>"btn btn-primary" %></div>
 	</div>
