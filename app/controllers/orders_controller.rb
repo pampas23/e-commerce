@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.new(order_params)
     @order.add_items(current_user.cart)
     if @order.save
+      current_user.cart.destroy
       redirect_to order_path(@order)
     else
       render :new
