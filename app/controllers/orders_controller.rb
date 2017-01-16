@@ -18,6 +18,16 @@ class OrdersController < ApplicationController
   	@order = find_order
   end
 
+  def checkout
+    @order = current_user.orders.find(params[:id])
+    if @order.paid?
+      redirect_to :back, alert: 'The order was paid'
+    else
+      @payment = @order.payments.create!(payment_method: params[:payment_method])
+      render layout: false
+    end
+  end
+  
   private
 
   def order_params
