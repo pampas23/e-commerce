@@ -40,7 +40,7 @@
           <div class='media'>
             <%= image_tag Faker::Placeholdit.image("240x160", "png", 'ccc'), class: 'pull-left' %>
             <div class='media-body'>
-              <h4 class='product-name'><%= link_to product.name, category_product_path(product.category, product) %></h4>
+              <h4 class='product-name'><%= link_to product.name, category_product_path(@category, product) %></h4>
               <div class='product-description'><%=truncate product.discription , length: 30 %></div>
               <div class='product-price'><%= number_to_currency product.price %></div>
             </div>
